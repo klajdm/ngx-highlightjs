@@ -1,4 +1,10 @@
-import { Component, inject, input, InputSignal, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  inject,
+  input,
+  InputSignal,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { KeyValuePipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
@@ -22,8 +28,8 @@ import { CodeComponent } from '../code/code.component';
     MatButtonModule,
     MatProgressBarModule,
     HighlightPlusModule,
-    CodeComponent
-  ]
+    CodeComponent,
+  ],
 })
 export class GistComponent {
   readonly hljs: HighlightJS = inject(HighlightJS);

@@ -1,4 +1,9 @@
-import { Component, input, InputSignal, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  input,
+  InputSignal,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { HighlightModule } from 'ngx-highlightjs';
 import { HighlightLineNumbers } from 'ngx-highlightjs/line-numbers';
 import { NgScrollbar } from 'ngx-scrollbar';
@@ -14,7 +19,7 @@ import { NgScrollbar } from 'ngx-scrollbar';
     </ng-scrollbar>
   `,
   styleUrl: './code.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CodeComponent {
   readonly code: InputSignal<string | null> = input<string | null>(null);

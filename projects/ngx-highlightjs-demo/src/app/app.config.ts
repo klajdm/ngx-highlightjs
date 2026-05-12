@@ -17,12 +17,12 @@ export const appConfig: ApplicationConfig = {
         css: () => import('highlight.js/lib/languages/css'),
         xml: () => import('highlight.js/lib/languages/xml'),
         cs: () => import('highlight.js/lib/languages/csharp'),
-      }
+      },
     }),
     provideGistOptions({
       clientId: environment.clientId,
       clientSecret: environment.clientSecret,
     }),
-    provideAnimationsAsync()
-  ]
+    provideAnimationsAsync(),
+  ],
 };

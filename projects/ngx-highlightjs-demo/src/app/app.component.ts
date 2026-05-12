@@ -24,11 +24,10 @@ import { HeaderComponent } from './header/header.component';
     MatToolbarModule,
     NgScrollbarModule,
     HeaderComponent,
-    GistComponent
-  ]
+    GistComponent,
+  ],
 })
 export class AppComponent {
-
   private readonly hljsLoader: HighlightLoader = inject(HighlightLoader);
 
   // Gist id
@@ -116,7 +115,8 @@ export class AppComponent {
   }
 
   changeTheme(): void {
-    this.hljsLoader.setTheme(`//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/${ this.theme }.min.css`);
+    this.hljsLoader.setTheme(
+      `//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/${this.theme}.min.css`,
+    );
   }
-
 }
