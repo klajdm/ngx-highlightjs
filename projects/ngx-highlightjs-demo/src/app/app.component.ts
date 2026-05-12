@@ -1,5 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -8,7 +7,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 import { HighlightLoader } from 'ngx-highlightjs';
-import { Gist } from 'ngx-highlightjs/plus';
 import { GistComponent } from './gist/gist.component';
 import { HeaderComponent } from './header/header.component';
 
@@ -18,7 +16,6 @@ import { HeaderComponent } from './header/header.component';
   styleUrl: './app.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    CommonModule,
     FormsModule,
     MatIconModule,
     MatInputModule,
@@ -30,11 +27,9 @@ import { HeaderComponent } from './header/header.component';
     GistComponent
   ]
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
   private readonly hljsLoader: HighlightLoader = inject(HighlightLoader);
-
-  gist!: Gist;
 
   // Gist id
   gistId: string = '6fd1b8fe940ded9f792335addb60c809';
@@ -116,7 +111,7 @@ export class AppComponent implements OnInit {
     'xt256',
   ];
 
-  ngOnInit(): void {
+  constructor() {
     this.changeTheme();
   }
 

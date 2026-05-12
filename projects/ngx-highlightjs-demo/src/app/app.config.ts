@@ -17,8 +17,7 @@ export const appConfig: ApplicationConfig = {
         css: () => import('highlight.js/lib/languages/css'),
         xml: () => import('highlight.js/lib/languages/xml'),
         cs: () => import('highlight.js/lib/languages/csharp'),
-      },
-      themePath: 'assets/styles/androidstudio.css'
+      }
     }),
     provideGistOptions({
       clientId: environment.clientId,

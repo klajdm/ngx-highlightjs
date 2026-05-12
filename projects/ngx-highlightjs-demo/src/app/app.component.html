@@ -18,7 +18,9 @@
 
       <mat-form-field color="accent">
         <mat-select placeholder="Theme" [(value)]="theme" (valueChange)="changeTheme()">
-          <mat-option *ngFor="let style of styles" [value]="style">{{style}}</mat-option>
+          @for (style of styles; track style) {
+            <mat-option [value]="style">{{style}}</mat-option>
+          }
         </mat-select>
       </mat-form-field>
 

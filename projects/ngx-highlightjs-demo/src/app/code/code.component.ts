@@ -17,5 +17,5 @@ import { NgScrollbar } from 'ngx-scrollbar';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CodeComponent {
-  readonly code: InputSignal<string> = input<string>();
+  readonly code: InputSignal<string | null> = input<string | null>(null);
 }
