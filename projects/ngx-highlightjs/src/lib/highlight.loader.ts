@@ -28,10 +28,10 @@ export class HighlightLoader {
   private options: HighlightJSOptions = inject(HIGHLIGHT_OPTIONS, { optional: true });
 
   // Stream that emits when hljs library is loaded and ready to use
-  private readonly _ready: BehaviorSubject<HLJSApi> = new BehaviorSubject<HLJSApi>(null);
+  private readonly _ready = new BehaviorSubject<HLJSApi | null>(null);
 
   readonly ready: Promise<HLJSApi> = firstValueFrom(this._ready.asObservable().pipe(
-    filter((hljs: HLJSApi) => !!hljs),
+    filter((hljs): hljs is HLJSApi => hljs !== null),
   ));
 
   private _themeLinkElement: HTMLLinkElement;
